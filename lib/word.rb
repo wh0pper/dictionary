@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 class Word
-  attr_reader :word, :definition
+  attr_reader :word, :definition, :word_list
   @@word_list = {}
 
   def initialize(attributes)
@@ -10,6 +10,10 @@ class Word
   end
 
   def add_to_list
-    @@word_list.store('@word', self)
+    @@word_list.store(@word, self)
+  end
+
+  def self.return_list
+    @@word_list
   end
 end
