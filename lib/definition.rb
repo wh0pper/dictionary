@@ -8,7 +8,7 @@ Wordnik.configure do |config|
 end
 
 class Definition
-  attr_reader :word
+  attr_reader :word, :definition1
 
   def initialize(word)
     @word = word
@@ -20,7 +20,7 @@ class Definition
 
   def parse_definition
     return1 = @api_return[0]
-    definition1 = return1['text']
+    @definition1 = return1['text']
   end
 
   def custom_definition(input)

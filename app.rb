@@ -16,3 +16,8 @@ post('/') do
   @word_list = Word.return_list
   erb(:word_list)
 end
+
+get('/:word') do
+  
+  erb(:definition)
+end

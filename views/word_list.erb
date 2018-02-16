@@ -7,5 +7,5 @@
 </form>
 <h3>Word list:</h3>
 <% @word_list.each do |key, value| %>
-  <p><%= key %></p>
+  <p><a href="/<%= key%>"><%= key %></a></p>
 <% end %>
