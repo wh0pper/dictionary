@@ -19,6 +19,8 @@ describe('Word') do
         expect(Word.return_list).to(eq({'test' => test_word}))
       end
     end
+
+
   end
 end
 

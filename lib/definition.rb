@@ -17,12 +17,12 @@ class Definition
 
   def parse_definition
     return1 = @api_return[0]
-    @definition1 = return1['text']
+    definition1 = return1['text']
   end
 
   def parse_pos
     return1 = @api_return[0]
-
+    part_of_speech = return1['partOfSpeech']
   end
 
   def custom_definition(input)
