@@ -32,4 +32,10 @@ class Definition
   def custom_definition(input)
     @custom_definitions.push(input)
   end
+
+	def api_synonyms
+		array = Wordnik.word.get_related(@word, :type => 'synonym')
+		hash = array[0]
+		hash['words'].join(', ')
+	end
 end

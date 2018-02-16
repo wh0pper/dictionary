@@ -6,6 +6,6 @@
   </div>
 </form>
 <h3>Word list:</h3>
-<% @word_list.each do |key, value| %>
-  <p><a href="/<%= key%>"><%= key %></a></p>
+<% @word_list.each do |word| %>
+  <p><a href="/<%= word%>"><%= word %></a></p>
 <% end %>
