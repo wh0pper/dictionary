@@ -19,10 +19,8 @@ post('/') do
 end
 
 get('/:word') do
-  current_word = params[:word]
-  # binding.pry
-  definition = Definition.new(current_word)
-  definition.api_definition
+  @current_word = params[:word]
+  definition = Definition.new(@current_word)
   @definition = definition.parse_definition
   erb(:definition)
 end

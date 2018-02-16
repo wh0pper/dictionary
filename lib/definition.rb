@@ -12,15 +12,17 @@ class Definition
 
   def initialize(word)
     @word = word
-  end
-
-  def api_definition
-    @api_return = Wordnik.word.get_definitions(@word, :limit => 1)
+    @api_return = Wordnik.word.get_definitions(word, :limit => 1)
   end
 
   def parse_definition
     return1 = @api_return[0]
     @definition1 = return1['text']
+  end
+
+  def parse_pos
+    return1 = @api_return[0]
+
   end
 
   def custom_definition(input)
