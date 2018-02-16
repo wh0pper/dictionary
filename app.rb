@@ -27,11 +27,11 @@ get('/:word') do
   erb(:definition)
 end
 
-post('/:word') do
+post('/:word') do #custom definitions added
   @current_word = params[:word]
   definition = Definition.new(@current_word)
   @definition = definition.parse_definition
   @part_of_speech = definition.parse_pos
-  
+  @custom_definition = params[:definition]
   erb(:definition)
 end

@@ -1,12 +1,17 @@
 <h2><%= @current_word %> (<%= @part_of_speech %>)</h2>
 <h4>Definition:</h4>
 <p><%= @definition %></p>
-<h4
+<% if @custom_definition %>
+  <h4>Custom Definitions:</h4>
+  <%= @custom_definition %>
+<% end %>
+
+
 <br>
-<h3>Add a custom definition:</h3>
+<h4>Add a custom definition:</h4>
 <form action='/<%= @current_word %>' method='post'>
   <div class='form-group'>
-    <input name='word' class='form-control' type='text'/><br>
+    <input name='definition' class='form-control' type='text'/><br>
     <button type='submit' class='btn btn-primary'>Add</button>
   </div>
 </form>
