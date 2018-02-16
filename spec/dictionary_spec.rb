@@ -24,6 +24,7 @@ end
 
 describe('Definition') do
   test_definition = Definition.new('test')
+  api_return = test_definition.api_definition
   describe('#initialize') do
     it('stores the word to define in an instance variable') do
       expect(test_definition.word).to(eq('test'))
@@ -32,8 +33,13 @@ describe('Definition') do
 
   describe('#get_definition') do
     it('uses wordnik to get dictionary definition of word') do
-      api_return = test_definition.get_definition
       expect(api_return.is_a?(Array)).to(eq(true))
+    end
+  end
+
+  describe('#parse_definition') do
+    it('parses wordnik return to isolate word definition string') do
+      expect(test_definition.parse_definition).to(eq("A procedure for critical evaluation; a means of determining the presence, quality, or truth of something; a trial:  a test of one's eyesight; subjecting a hypothesis to a test; a test of an athlete's endurance. "))
     end
   end
 end

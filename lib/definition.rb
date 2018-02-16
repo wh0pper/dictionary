@@ -14,8 +14,13 @@ class Definition
     @word = word
   end
 
-  def get_definition
-    api_return = Wordnik.word.get_definitions('test', :limit => 1)
+  def api_definition
+    @api_return = Wordnik.word.get_definitions('test', :limit => 1)
+  end
+
+  def parse_definition
+    return1 = @api_return[0]
+    definition1 = return1['text']
   end
 
   def custom_definition(input)
