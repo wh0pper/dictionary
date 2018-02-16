@@ -28,6 +28,12 @@ describe('Definition') do
     it('stores the word to define in an instance variable') do
       expect(test_definition.word).to(eq('test'))
     end
+  end
 
+  describe('#get_definition') do
+    it('uses wordnik to get dictionary definition of word') do
+      api_return = test_definition.get_definition
+      expect(api_return.is_a?(Array)).to(eq(true))
+    end
   end
 end
