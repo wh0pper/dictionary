@@ -1,10 +1,13 @@
+<br>
+<form><button formaction='/' class="btn btn-info">Back to list</button></form>
+
 <h2><%= @current_word %> (<%= @part_of_speech %>)</h2>
 <h4>Definition:</h4>
 <p><%= @definition %></p>
 <% if !@custom_definitions.empty? %>
   <h4>Custom Definitions:</h4>
   <% @custom_definitions.each do |definition| %>
-    <%= definition %>
+    <p><%= definition %></p>
   <% end %>
 <% end %>
 

@@ -8,7 +8,7 @@ Wordnik.configure do |config|
 end
 
 class Definition
-  attr_reader :word, :api_return, :custom_definitions
+  attr_reader :word, :custom_definitions
 
   def initialize(word)
     @word = word
