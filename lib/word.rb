@@ -2,7 +2,7 @@
 
 class Word
   attr_reader :word, :definition, :word_list
-  @@word_list = {}
+  @@word_hash = {}
 
   def initialize(attributes)
     @word = attributes[:word]
@@ -10,10 +10,10 @@ class Word
   end
 
   def add_to_list
-    @@word_list.store(@word, self)
+    @@word_hash.store(@word, self)
   end
 
   def self.return_list
-    @@word_list
+    @@word_hash
   end
 end

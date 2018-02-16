@@ -12,7 +12,7 @@ describe('Word') do
       expect(test_word.definition).to(eq('test definition'))
     end
 
-    describe('#add_to_list') do
+    describe('#add_to_list & #self.return_list') do
       it("adds instance to a class hash containing all words") do
         test_word.add_to_list
         expect(Word.return_list).to(eq({'test' => test_word}))
