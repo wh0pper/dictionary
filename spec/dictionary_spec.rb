@@ -4,19 +4,19 @@ require('word')
 require('definition')
 
 describe('Word') do
-  test_attributes = { :word => 'test', :definition => 'test definition' }
-  test_word = Word.new(test_attributes)
+  test_word = Word.new('test')
 
   describe('#initialize') do
     it("takes hash of properties as argument and instantiates a new word") do
       expect(test_word.word).to(eq('test'))
-      expect(test_word.definition).to(eq('test definition'))
+      expect(test_word.definition.is_a?(Definition)).to(eq(true))
     end
 
     describe('#add_to_list & #self.return_list') do
       it("adds instance to a class hash containing all words") do
         test_word.add_to_list
-        expect(Word.return_list).to(eq(['test']))
+        list = Word.return_list
+        expect(list.has_key?('test')).to(eq(true))
       end
     end
   end

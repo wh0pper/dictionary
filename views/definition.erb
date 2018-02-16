@@ -1,9 +1,11 @@
 <h2><%= @current_word %> (<%= @part_of_speech %>)</h2>
 <h4>Definition:</h4>
 <p><%= @definition %></p>
-<% if @custom_definition %>
+<% if !@custom_definitions.empty? %>
   <h4>Custom Definitions:</h4>
-  <%= @custom_definition %>
+  <% @custom_definitions.each do |definition| %>
+    <%= definition %>
+  <% end %>
 <% end %>
 
 

@@ -8,12 +8,16 @@ Wordnik.configure do |config|
 end
 
 class Definition
-  attr_reader :word, :api_return
+  attr_reader :word, :api_return, :custom_definitions
 
   def initialize(word)
     @word = word
-    @api_return = Wordnik.word.get_definitions(word, :limit => 1)
+    @custom_definitions = []
   end
+
+	def api_return
+		@api_return = Wordnik.word.get_definitions(word, :limit => 1)
+	end
 
   def parse_definition
     return1 = @api_return[0]
@@ -26,6 +30,6 @@ class Definition
   end
 
   def custom_definition(input)
-    @custom_definition = input
+    @custom_definitions.push(input)
   end
 end
