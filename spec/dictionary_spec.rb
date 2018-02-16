@@ -16,17 +16,14 @@ describe('Word') do
     describe('#add_to_list & #self.return_list') do
       it("adds instance to a class hash containing all words") do
         test_word.add_to_list
-        expect(Word.return_list).to(eq({'test' => test_word}))
+        expect(Word.return_list).to(eq(['test']))
       end
     end
-
-
   end
 end
 
 describe('Definition') do
   test_definition = Definition.new('test')
-  api_return = test_definition.api_definition
   describe('#initialize') do
     it('stores the word to define in an instance variable') do
       expect(test_definition.word).to(eq('test'))
@@ -35,7 +32,7 @@ describe('Definition') do
 
   describe('#get_definition') do
     it('uses wordnik to get dictionary definition of word') do
-      expect(api_return.is_a?(Array)).to(eq(true))
+      expect(test_definition.api_return.is_a?(Array)).to(eq(true))
     end
   end
 

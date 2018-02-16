@@ -26,3 +26,12 @@ get('/:word') do
   @part_of_speech = definition.parse_pos
   erb(:definition)
 end
+
+post('/:word') do
+  @current_word = params[:word]
+  definition = Definition.new(@current_word)
+  @definition = definition.parse_definition
+  @part_of_speech = definition.parse_pos
+  
+  erb(:definition)
+end

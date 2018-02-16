@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+# !/usr/bin/ruby
 require 'json'
 require 'net/http'
 %w(rubygems wordnik).each {|lib| require lib}
@@ -8,7 +8,7 @@ Wordnik.configure do |config|
 end
 
 class Definition
-  attr_reader :word, :definition1
+  attr_reader :word, :api_return
 
   def initialize(word)
     @word = word
