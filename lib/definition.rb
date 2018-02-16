@@ -15,7 +15,7 @@ class Definition
   end
 
   def api_definition
-    @api_return = Wordnik.word.get_definitions('test', :limit => 1)
+    @api_return = Wordnik.word.get_definitions(@word, :limit => 1)
   end
 
   def parse_definition

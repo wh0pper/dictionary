@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/word')
+require('./lib/definition')
 require('pry')
 
 get('/') do
@@ -18,6 +19,10 @@ post('/') do
 end
 
 get('/:word') do
-  
+  current_word = params[:word]
+  # binding.pry
+  definition = Definition.new(current_word)
+  definition.api_definition
+  @definition = definition.parse_definition
   erb(:definition)
 end
