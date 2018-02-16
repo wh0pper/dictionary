@@ -1,6 +1,7 @@
 require('rspec')
-require('word')
 require('pry')
+require('word')
+require('definition')
 
 describe('Word') do
   test_attributes = { :word => 'test', :definition => 'test definition' }
@@ -18,5 +19,15 @@ describe('Word') do
         expect(Word.return_list).to(eq({'test' => test_word}))
       end
     end
+  end
+end
+
+describe('Definition') do
+  test_definition = Definition.new('test')
+  describe('#initialize') do
+    it('stores the word to define in an instance variable') do
+      expect(test_definition.word).to(eq('test'))
+    end
+
   end
 end
