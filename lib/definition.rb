@@ -36,6 +36,10 @@ class Definition
 	def api_synonyms
 		array = Wordnik.word.get_related(@word, :type => 'synonym')
 		hash = array[0]
-		hash['words'].join(', ')
+		if !array.empty?
+			return hash['words'].join(', ')
+		else
+			return "None found"
+		end
 	end
 end
