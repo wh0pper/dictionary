@@ -47,10 +47,6 @@ post('/:word') do #custom definitions added
   @part_of_speech = current_definition.parse_pos
   current_definition.custom_definition(params[:definition])
   @custom_definitions = current_definition.custom_definitions
+  @syns = current_definition.api_synonyms
   erb(:definition)
 end
-
-# post('/clear') do
-#   Word.clear
-#   redirect '/'
-# end

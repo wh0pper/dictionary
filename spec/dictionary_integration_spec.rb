@@ -29,4 +29,14 @@ describe('following added word as link to definition page', {:type => :feature})
     click_link('integration')
     expect(page).to have_content('Definition:')
   end
+
+  it('adds custom definitions for word') do
+    visit('/integration')
+    fill_in('definition', :with => 'test add definition')
+    click_button('Add')
+    fill_in('definition', :with => 'testing a second custom definition')
+    click_button('Add')
+    expect(page).to have_content('test add definition')
+    expect(page).to have_content('testing a second custom definition')
+  end
 end

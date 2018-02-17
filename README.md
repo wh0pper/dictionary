@@ -7,26 +7,32 @@ Project completed for Epicodus - Ruby Week 2 Code Review
 
 This dictionary app is build using ruby and sinatra and deployed using heroku. It basic functionality is a custom dictionary builder using the wordnik API. It allows the user to build a word-list, automatically populates each word with a definition pulled from wordnik, and also allows the user to add a custom definition.
 
-## Specifications
+## Setup/Installation Requirements
+This app is deployed to heroku at
 
+## Technologies Used
+Languages: Ruby & HTML
+Gems: Sinatra, Capybara, rspec, wordnik
+
+## Specifications
+### Backend
 1. Word class initializes with a hash of attributes
   * Example Input: 'example'
   * Logic: input inserted to hash { :word => 'example', :definition => 'example definition' }, new instance of word class created with that hash
   * Example Output: input word added to list of words on page, which sorts alphabetically every time a word is added
-2.
-  * Example Input:
-  * Example Output:
-3.
-  * Example Input:
-  * Example Output:
+2. Each instance of word class calls on wordnik api to get definition and synonyms
+  * Example Input: 'example'
+  * Example Output: Method parses api return to display example definition
 
 
-
-
-## Setup/Installation Requirements
-
-
-## Technologies Used
+###Frontend
+1. User adds words to list on main page
+  * Example Input: 'example', 'test', 'antelope'
+  * Example Output: a list of all added words, where each word is a clickable link to the definition page for that word
+2. User adds custom definitions in definition page
+  * Example Input: 'custom definition 1', 'custom definition 2'
+  * Example Output: a list of custom definitions in addition to the dictionary definition and other word info on the page
+3. User is able to return to word list, then revisit a particular word and have previously entered definitions still be there
 
 
 ### License
