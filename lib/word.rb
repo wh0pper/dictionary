@@ -17,8 +17,8 @@ class Word
     @@word_list
   end
 
-  # def self.sort
-  #   @@word_list.sort!
+  # def self.clear
+  #   @@word_list = {}
   # end
 
 end

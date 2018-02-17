@@ -49,3 +49,8 @@ post('/:word') do #custom definitions added
   @custom_definitions = current_definition.custom_definitions
   erb(:definition)
 end
+
+# post('/clear') do
+#   Word.clear
+#   redirect '/'
+# end
